@@ -3,7 +3,7 @@ local namespace = vim.api.nvim_create_namespace("ts_node_action_conceal")
 return function(char, level, cursor)
   char = char or ""
   level = level or 2
-  cursor = cursor or "nc"
+  cursor = cursor or ""
 
   local function action(node)
     vim.api.nvim_set_option_value("concealcursor", cursor, { win = 0 })
