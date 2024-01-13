@@ -32,10 +32,10 @@ local ret = {
   ["property_identifier"] = actions.cycle_case(),
   ["string_fragment"] = actions.conceal_string(),
   ["statement_block"] = merge_nested_tables(
-    actions.conceal_string(),
     actions.toggle_multiline(padding),
     { ask = true }
   ),
+  ["template_string"] = actions.cycle_template_string(),
   ["binary_expression"] = actions.toggle_operator(operators),
   ["object"] = actions.toggle_multiline(padding),
   ["array"] = actions.toggle_multiline(padding),
