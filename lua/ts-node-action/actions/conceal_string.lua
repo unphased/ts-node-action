@@ -6,8 +6,8 @@ return function(char, level, cursor)
   cursor = cursor or "nc"
 
   local function action(node)
-    vim.api.nvim_win_set_option(0, "concealcursor", cursor)
-    vim.api.nvim_win_set_option(0, "conceallevel", level)
+    vim.api.nvim_set_option_value("concealcursor", cursor, { win = 0 })
+    vim.api.nvim_set_option_value("conceallevel", level, { win = 0 })
 
     local start_row, start_col, end_row, end_col = node:range()
     local extmark_id = unpack(
