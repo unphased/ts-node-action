@@ -35,7 +35,7 @@ local ret = {
     actions.toggle_multiline(padding),
     { ask = true }
   ),
-  ["template_string"] = actions.cycle_template_string(),
+  ["template_string"] = actions.convert_template_string(),
   ["binary_expression"] = actions.toggle_operator(operators),
   ["object"] = actions.toggle_multiline(padding),
   ["array"] = actions.toggle_multiline(padding),
