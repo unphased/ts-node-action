@@ -37,7 +37,7 @@ function stripTemplateSubstitution(node)
     if node:child_count() > 0 then
       -- seems like we can be fairly sure a template_substitution always has 3 children: `${`, some kind of expr, and `}`
       local child = node:child(1)
-      log("child " .. child:type() .. ' ' .. helpers.node_text(child))
+      -- log("child " .. child:type() .. ' ' .. helpers.node_text(child))
       if child:type() == "binary_expression" then
         local operator = child:child(1):type()
         if vim.tbl_contains(highPrecedenceBinaryExprOptrs, operator) then
@@ -59,7 +59,7 @@ return function()
   local function action(node)
     local text = helpers.node_text(node)
     local _, _, start, _, _, end_ = node:range(true)
-    log("text", text, "from " .. tostring(start) .. " to " .. tostring(end_))
+    -- log("text", text, "from " .. tostring(start) .. " to " .. tostring(end_))
     local i = 0
     local last_cend
     local assembly = {}
