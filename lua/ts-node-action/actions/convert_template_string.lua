@@ -85,8 +85,7 @@ return function()
       end
       last_cend = cend
     end
-    log("assembly with plus", table.concat(assembly, ' + '))
-    return text
+    return table.concat(assembly, ' + ')
   end
   return { { action, name = "Cycle Template String" } }
 end
