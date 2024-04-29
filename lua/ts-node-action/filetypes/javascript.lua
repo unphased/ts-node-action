@@ -31,6 +31,7 @@ end
 
 local ret = {
   ["property_identifier"] = {
+    { actions.conceal_string(), name = 'conceal' },
     { actions.cycle_case(), name = 'Cycle case' },
     { js_actions.emit_debug_dump(), name = 'Debug dump' }
   },

@@ -1,6 +1,6 @@
 local helpers = require("ts-node-action.helpers")
 
-return function
+return function()
 
   local function action(node)
     local txt = helpers.node_text(node)

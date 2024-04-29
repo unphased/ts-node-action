@@ -129,7 +129,7 @@ M.node_action = require("ts-node-action.repeat").set(function()
       }, function(choice)
         log('CHOICE', choice)
         if choice then
-          do_action(choice[1], node)
+          do_action(choice[1][1][1], node)
         end
       end)
     end
