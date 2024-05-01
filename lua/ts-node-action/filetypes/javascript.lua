@@ -31,7 +31,18 @@ end
 
 local ret = {
   ["property_identifier"] = {
-    { actions.conceal_string(), name = 'conceal' },
+    { actions.cycle_case(), name = 'cycle case' },
+    { js_actions.emit_debug_dump(), name = 'Debug dump' }
+  },
+  ["variable_name"] = {
+    { actions.cycle_case(), name = 'Cycle case' },
+    { js_actions.emit_debug_dump(), name = 'Debug dump' }
+  },
+  ["variable"] = {
+    { actions.cycle_case(), name = 'Cycle case' },
+    { js_actions.emit_debug_dump(), name = 'Debug dump' }
+  },
+  ["identifier"] = {
     { actions.cycle_case(), name = 'Cycle case' },
     { js_actions.emit_debug_dump(), name = 'Debug dump' }
   },

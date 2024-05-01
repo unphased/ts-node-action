@@ -51,7 +51,8 @@ end
 --- @param node TSNode
 --- @return nil
 local function do_action(action, node)
-  local replacement, opts = action(node)
+  local act = type(action) == "table" and action[1][1] or action
+  local replacement, opts = act(node)
   if replacement then
     replace_node(node, replacement, opts or {})
   end
